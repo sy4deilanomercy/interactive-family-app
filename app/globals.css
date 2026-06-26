@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #3E3835;
+  --brand-terracotta: #C87A53;
+  --brand-terracotta-dark: #A55D37;
+  --brand-olive: #606C38;
+  --brand-moss: #283618;
+  --brand-cream-light: #FDFBF7;
+  --brand-sage: #DDA15E;
+  --brand-apricot: #FEFAE0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-terracotta: var(--brand-terracotta);
+  --color-terracotta-dark: var(--brand-terracotta-dark);
+  --color-olive: var(--brand-olive);
+  --color-moss: var(--brand-moss);
+  --color-cream-light: var(--brand-cream-light);
+  --color-sage: var(--brand-sage);
+  --color-apricot: var(--brand-apricot);
+  --font-sans: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom warm, elegant scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EEDCD2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D9C3B4;
+}
+
+/* Animation helpers */
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile touch improvements */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Prevent text size adjust on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+}
