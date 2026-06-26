@@ -163,7 +163,7 @@ function ProfileDrawer({ member, onClose }: { member: FamilyMemberWithTree; onCl
         </h3>
         {member.nickname && (
           <p className="text-sm italic mt-0.5" style={{ color: '#8d7b5a' }}>
-            "{member.nickname}"
+            &ldquo;{member.nickname}&rdquo;
           </p>
         )}
 
@@ -289,12 +289,6 @@ export function FamilyTree() {
     const dx = touches[0].clientX - touches[1].clientX;
     const dy = touches[0].clientY - touches[1].clientY;
     return Math.sqrt(dx * dx + dy * dy);
-  };
-
-  const getTouchCenter = (touches: React.TouchList) => {
-    const x = (touches[0].clientX + touches[1].clientX) / 2;
-    const y = (touches[0].clientY + touches[1].clientY) / 2;
-    return { x, y };
   };
 
   const handleMouseDown = (e: React.MouseEvent) => {
